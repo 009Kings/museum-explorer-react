@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+  console.log(req.params.id)
   db.Museum.findById(req.params.id)
   .then(museum=>res.send(museum))
   .catch(err=>res.send({message: 'error in getting one museum', err}));

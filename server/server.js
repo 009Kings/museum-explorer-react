@@ -7,7 +7,8 @@ const app = express();
 
 // Middleware, etc
 app.use(express.urlencoded({ extended: false }));
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
 // Declare controllers
 app.use('/museums', require('./routes/museums'));
